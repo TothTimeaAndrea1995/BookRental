@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Könyvek listája</title>
+</head>
+<body>
+    <h1>Könyvlista</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Azonosító</th>
+            <th>Szerző</th>
+            <th>Cím</th>
+            <th>Kiadva</th>
+            <th>Műveletek</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.bookId}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.publishedYear}"></td>
+            <td>
+                <a >Szerkesztés</a>
+                <a th:href="@{/books/delete/{id}(id=${book.bookId})}">Törlés</a>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>

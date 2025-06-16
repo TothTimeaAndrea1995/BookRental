@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szerkesztés</title>
+</head>
+<body>
+    <form action="#" th:action="@{/books/edit}" method="post">
+
+        <input type="hidden" th:field="*{id}"/>
+
+        <label for="author">Szerző:</label>
+        <input type="text" id="author" name="author" th:field="*{author}" />
+
+        <label for="title">Cím:</label>
+        <input type="text" id="title" name="title" th:field="*{title}" />
+
+        <label for="publishedYear">Kiadva:</label>
+        <input type="text" id="publishedYear" name="publishedYear" th:field="*{publishedYear}" />
+
+        <button type="submit">Mentés</button>
+
+    </form>
+
+    <a th:href="@{/books}">Vissza a könyvek listájához</a>
+    
+</body>
+</html>
